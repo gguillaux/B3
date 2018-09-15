@@ -18,6 +18,7 @@ def get_ibov():
 	csv_file = r'c:\temp\auxpy\ibov_' + now.strftime('%Y-%m-%d_%H%M%S.csv')
 	ibov_df.to_csv(csv_file, index=False)
 
+#==================================================================================================
 
 #get url of all b3 indexes
 def get_b3_indexes_urls():
@@ -38,6 +39,8 @@ def get_b3_indexes_urls():
         indices[name]['url'] = link
     return indices
 
+#==================================================================================================
+
 def get_b3_indexes_composition_url():
     from bs4 import BeautifulSoup as bs    
     import requests
@@ -53,6 +56,8 @@ def get_b3_indexes_composition_url():
         except:
             indexes[index]['composition'] = '*** failed to get composition ***'
     return indexes
+
+#==================================================================================================
 
 def get_index_composition_csv(indexes):
     from bs4 import BeautifulSoup as bs
@@ -79,8 +84,10 @@ def get_index_composition_csv(indexes):
         except:
             indexes[i]['dataframe'] = '*** no dataframe ***'
 
+#==================================================================================================
 
 def trim_url(url):
     last_slash = url[::-1].find('/')
     clean_url = url[:len(url) - last_slash]
     return clean_url
+
