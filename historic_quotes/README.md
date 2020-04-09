@@ -14,6 +14,9 @@
 2. In that window, open the console.
 3. In the console, run that JS function: AbrirArquivo('COTAHIST_A2010.ZIP')
     ```javascript
-    var k = 10;
-    for (x=-)
+    for (x=0; x < 27; x++) {
+        var year = 1994 + x;
+        var file = 'COTAHIST_A' + year + '.ZIP';
+        AbrirArquivo(file);
+    }
     ```
